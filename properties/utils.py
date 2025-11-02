@@ -1,5 +1,5 @@
 from django.core.cache import cache
-from properties.models import Properties
+from properties.models import Property
 
 def get_all_properties():
     """
@@ -8,6 +8,6 @@ def get_all_properties():
     """
     properties = cache.get('all_properties')
     if properties is None:
-        Properties = list(Properties.objects.all())
+        Properties = list(Property.objects.all())
         cache.set('all_properties', properties, 3000)
     return properties

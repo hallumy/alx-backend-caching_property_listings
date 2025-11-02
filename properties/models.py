@@ -1,6 +1,6 @@
 from django.db import models
 
-class Properties(models.Model):
+class Property(models.Model):
     """
     Represents properties listing on the platform
     Attributes:
