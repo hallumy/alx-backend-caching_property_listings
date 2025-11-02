@@ -10,5 +10,5 @@ def property_list(request):
     """
     properties = Properties.objects.all()
     data = list(properties)
-    return JsonResponse(data, safe=False)
+    return JsonResponse(list(properties), safe=False)
 
