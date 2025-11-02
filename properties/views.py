@@ -8,7 +8,7 @@ def property_list(request):
     Returns a list of all property records.
     Cached in Redis for 15 minutes to reduce database queries.
     """
-    properties = Properties.objects.all().values('id', 'title', 'location', 'price', 'description')
+    properties = Properties.objects.all()
     data = list(properties)
-    return JsonResponse(list(properties), safe=False)
+    return JsonResponse({"properties: list(properties)"}, safe=False)
 
